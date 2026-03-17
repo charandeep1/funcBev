@@ -25,9 +25,6 @@ const Homepage = () => {
             />
 
 
-
-
-
             <div className="flex flex-col items-center justify-center pt-32">
                 <p className="font-mono text-xl text-black font-bold">Changing your gulp to slurp</p>
                 <h1 className="font-mono text-8xl text-black font-bold p-2 ">
