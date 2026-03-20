@@ -3,7 +3,9 @@ import { div } from "framer-motion/client";
 const ProductPage = () => {
 
     return (
-        <div>Hellow biatches</div>
+        <div>
+            <p>hi</p>
+        </div>
     )
 
 }

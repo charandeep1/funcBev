@@ -1,13 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation'; // <-- Import the hook to track routes
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname(); // <-- Get the current route
 
     // Toggle function for the mobile menu
     const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+    // CRITICAL FIX: Close the mobile menu automatically whenever the route changes
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
 
     return (
         <header className="w-full bg-white px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-sm md:shadow-none">
@@ -16,16 +23,17 @@ const Navbar = () => {
             <div className="flex items-center gap-1">
                 <Link href="/" className="flex items-center gap-1">
                     <span className="text-2xl font-bold tracking-tight text-blue-600 lowercase">
-                        FuncBev<span className="text-xs align-top">®</span>
+                        Mizu<span className="text-xs align-top">®</span>
                     </span>
                 </Link>
             </div>
 
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-900">
-                <Link href="/productPage" className="flex items-center gap-1"><NavItem title="Products" /></Link>
-                <NavItem title="About Us" />
-                <NavItem title="Contact" />
+                {/* Now passing href directly to NavItem */}
+                <NavItem title="Products" href="/prodPage" currentPath={pathname} />
+                <NavItem title="About Us" href="/AboutUs" currentPath={pathname} />
+                <NavItem title="Contact" href="/Contact" currentPath={pathname} />
             </nav>
 
             {/* Mobile Hamburger / X Icon */}
@@ -44,9 +52,9 @@ const Navbar = () => {
                 absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col py-6 px-6 gap-6 md:hidden transition-all duration-300 origin-top
                 ${isMobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
             `}>
-                <NavItem title="Products" />
-                <NavItem title="About Us" />
-                <NavItem title="Contact" />
+                <NavItem title="Products" href="/prodPage/" currentPath={pathname} />
+                <NavItem title="About Us" href="/AboutUs" currentPath={pathname} />
+                <NavItem title="Contact" href="/Contact" currentPath={pathname} />
             </div>
 
         </header >
@@ -55,11 +63,18 @@ const Navbar = () => {
 
 export default Navbar;
 
-// Reusable component for the navigation items with the dropdown chevron
-function NavItem({ title }) {
+// Reusable component updated to be an actual Next.js Link
+function NavItem({ title, href = "#", currentPath }) {
+    // Check if the current URL matches this link's destination
+    const isActive = currentPath === href;
+
     return (
-        <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-600 transition-colors w-max">
-            <span>{title}</span>
+        <Link href={href} className="relative group flex items-center gap-1 w-max">
+            {/* Applies blue text if active, otherwise gray but turns blue on hover */}
+            <span className={`transition-colors duration-200 ${isActive ? 'text-blue-600' : 'text-gray-900 group-hover:text-blue-600'}`}>
+                {title}
+            </span>
+
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -70,10 +85,10 @@ function NavItem({ title }) {
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="mt-0.5 group-hover:rotate-180 transition-transform duration-200 md:group-hover:rotate-0"
+                className={`mt-0.5 transition-transform duration-200 md:group-hover:rotate-0 ${isActive ? 'text-blue-600' : 'text-gray-900 group-hover:text-blue-600 group-hover:rotate-180'}`}
             >
                 <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-        </div>
+        </Link>
     );
 }

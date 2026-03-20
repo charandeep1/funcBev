@@ -16,7 +16,7 @@ const FEATURES_DATA = [
         id: 'filtered',
         title: 'Advanced Water Filtration',
         description: 'Our state-of-the-art filtration system ensures every drop meets the highest standards of purity, delivering consistently clean and great-tasting water.',
-        buttonText: 'FuncBev Water Filtration',
+        buttonText: 'Mizu Water Filtration',
         buttonLink: '/filtration',
         imageSrc: '/images/filteration.png', // Replace with your image path
     },
@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
 
                 {/* Section Header */}
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1c4d2e] mb-16 tracking-tight">
-                    Why Choose FuncBev for Your Workplace Hydration Needs?
+                    Why Choose Mizu for Your Workplace Hydration Needs?
                 </h2>
 
                 {/* Responsive Grid: 1 column on mobile, 3 on medium screens and up */}

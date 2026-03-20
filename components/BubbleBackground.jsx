@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../app/BubbleBackground.module.css';
 
-export default function BubbleBackground({ 
+export default function BubbleBackground({
   bubbleCount = 60,
   minSize = 10,
   maxSize = 45,
