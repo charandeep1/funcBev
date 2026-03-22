@@ -1,7 +1,7 @@
 // import Image from "next/image";
 
 import Navbar from "@/components/navbar";
-import LandingHero from "../app/Pages/landingHero"
+import LandingHero from "./landingHero"
 
 
 

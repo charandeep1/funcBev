@@ -1,10 +1,10 @@
 import { div } from "framer-motion/client";
-
+import ProductDescription from "../../components/productDesc"
 const ProductPage = () => {
 
     return (
         <div>
-            <p>hi</p>
+            <ProductDescription />
         </div>
     )
 

@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="flex items-center gap-1">
                 <Link href="/" className="flex items-center gap-1">
                     <span className="text-2xl font-bold tracking-tight text-blue-600 lowercase">
-                        Mizu<span className="text-xs align-top">®</span>
+                        mizu<span className="text-xs align-top">®</span>
                     </span>
                 </Link>
             </div>
