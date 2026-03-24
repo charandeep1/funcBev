@@ -13,7 +13,7 @@ export default function ProductSpecsCard() {
 
     return (
         // Outer wrapper creates the vibrant gradient border effect
-        <div className="relative p-[3px] rounded-3xl bg-gradient-to-tr from-[#38bdf8] via-[#d946ef] to-[#fbbf24] w-full max-w-md mx-auto shadow-xl">
+        <div className="relative my-15 p-[3px] rounded-3xl bg-gradient-to-tr from-[#93bdfe] via-[#e3f1d0] to-[#32428e] w-full max-w-md mx-auto shadow-xl">
 
             {/* Inner white card */}
             <div className="bg-white rounded-[21px] p-8 h-full flex flex-col">
@@ -30,24 +30,24 @@ export default function ProductSpecsCard() {
                 </div>
 
                 {/* Title & Description */}
-                <div className="mb-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">Standup 2.0</h3>
-                    <p className="text-gray-400 text-sm font-medium">
+                {/* <div className="mb-6">
+                    <h3 className="text-xl font-bold text-black mb-1">The Tower v1</h3>
+                    <p className="text-black text-sm font-medium">
                         Smart sparkling and flavored water dispenser.
                     </p>
-                </div>
+                </div> */}
 
                 {/* Core Stats (Replaces the large Price section from the SaaS card) */}
                 <div className="flex flex-col gap-4 mb-6">
 
                     {/* Mix Limit */}
                     <div className="flex justify-between items-start">
-                        <span className="text-gray-500 text-sm font-medium pr-4">
-                            Flavors & enhancements to mix
+                        <span className=" text-sm font-medium pr-4">
+                            Total Flavors & Enhancements you can mix
                         </span>
                         <div className="text-right shrink-0">
-                            <span className="text-xl font-extrabold text-gray-900 tracking-tight block">up to 5</span>
-                            <span className="text-[10px] text-gray-400 font-medium block mt-0.5 max-w-[120px]">
+                            <span className="text-xl font-extrabold text-black tracking-tight block">up to 5</span>
+                            <span className="text-[12px] font-medium block mt-0.5 ">
                                 (3 flavors & 2 enhancements)
                             </span>
                         </div>
@@ -55,15 +55,11 @@ export default function ProductSpecsCard() {
 
                     {/* Slots Limit */}
                     <div className="flex justify-between items-end">
-                        <span className="text-gray-500 text-sm font-medium">Total machine slots</span>
-                        <span className="text-xl font-extrabold text-gray-900 tracking-tight">up to 8</span>
+                        <span className="text-sm font-medium">Total slots for Flavors</span>
+                        <span className="text-xl font-extrabold text-black tracking-tight">up to 8</span>
                     </div>
 
-                    {/* Colors */}
-                    <div className="flex justify-between items-end">
-                        <span className="text-gray-500 text-sm font-medium">Available colors</span>
-                        <span className="text-lg font-bold text-gray-900">White</span>
-                    </div>
+
 
                 </div>
 
@@ -86,7 +82,7 @@ export default function ProductSpecsCard() {
                                 />
                             </svg>
                             {/* Dotted underline text */}
-                            <span className="text-gray-500 text-sm font-medium underline decoration-gray-300 decoration-dotted underline-offset-4">
+                            <span className="text-sm font-medium underline decoration-dotted underline-offset-4">
                                 {feature}
                             </span>
                         </li>
@@ -95,7 +91,7 @@ export default function ProductSpecsCard() {
                 {/* CTA Button */}
                 <Link
                     href="/quote"
-                    className="flex justify-center w-full bg-[#1c1c1c] hover:bg-black text-white font-semibold py-3.5 rounded-xl mb-8 transition-colors duration-200"
+                    className="flex justify-center w-full bg-[#1c1c1c] hover:bg-black text-white font-semibold py-3.5 rounded-xl mt-8 transition-colors duration-200"
                 >
                     Get a Quote
                 </Link>
