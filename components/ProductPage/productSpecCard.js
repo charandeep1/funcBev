@@ -21,7 +21,7 @@ export default function ProductSpecsCard() {
                 {/* Header: Logo and Badge */}
                 <div className="flex justify-between items-start mb-6">
                     <div className="text-2xl font-bold tracking-tight text-blue-600 lowercase">
-                        bevi<span className="text-xs align-top">®</span>
+                        Mizu<span className="text-xs align-top">®</span>
                     </div>
 
                     <span className="bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -67,13 +67,6 @@ export default function ProductSpecsCard() {
 
                 </div>
 
-                {/* CTA Button */}
-                <Link
-                    href="/quote"
-                    className="flex justify-center w-full bg-[#1c1c1c] hover:bg-black text-white font-semibold py-3.5 rounded-xl mb-8 transition-colors duration-200"
-                >
-                    Get a Quote
-                </Link>
 
                 {/* Features List (Using the SaaS green check and dotted underlines) */}
                 <ul className="flex flex-col gap-4 mt-auto">
@@ -99,6 +92,14 @@ export default function ProductSpecsCard() {
                         </li>
                     ))}
                 </ul>
+                {/* CTA Button */}
+                <Link
+                    href="/quote"
+                    className="flex justify-center w-full bg-[#1c1c1c] hover:bg-black text-white font-semibold py-3.5 rounded-xl mb-8 transition-colors duration-200"
+                >
+                    Get a Quote
+                </Link>
+
 
             </div>
         </div>

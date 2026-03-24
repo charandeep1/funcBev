@@ -4,11 +4,12 @@ import Link from 'next/link';
 
 // components
 import ProductSpecsCard from './productSpecCard';
+import FeaturesGrid from './features';
 
 const ProductHero = () => {
     return (
         <>
-            <section className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 max-w-7xl mx-auto py-16 px-6">
+            <section className="my-30">
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
@@ -43,6 +44,9 @@ const ProductHero = () => {
 
 
                 </div>
+            </section>
+            <section>
+                <FeaturesGrid />
             </section>
 
 
