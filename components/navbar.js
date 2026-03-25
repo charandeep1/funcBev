@@ -31,8 +31,8 @@ const Navbar = () => {
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-900">
                 {/* Now passing href directly to NavItem */}
-                <NavItem title="Products" href="/prodPage" currentPath={pathname} />
-                <NavItem title="About Us" href="/AboutUs" currentPath={pathname} />
+                <NavItem title="Products" href="/products/" currentPath={pathname} />
+                <NavItem title="About Us" href="/about/" currentPath={pathname} />
                 <NavItem title="Contact" href="/Contact" currentPath={pathname} />
             </nav>
 
@@ -52,9 +52,9 @@ const Navbar = () => {
                 absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col py-6 px-6 gap-6 md:hidden transition-all duration-300 origin-top
                 ${isMobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
             `}>
-                <NavItem title="Products" href="/prodPage/" currentPath={pathname} />
-                <NavItem title="About Us" href="/AboutUs" currentPath={pathname} />
-                <NavItem title="Contact" href="/Contact" currentPath={pathname} />
+                <NavItem title="Products" href="/products/" currentPath={pathname} />
+                <NavItem title="About Us" href="/about/" currentPath={pathname} />
+                <NavItem title="Contact" href="/Contact/" currentPath={pathname} />
             </div>
 
         </header >
