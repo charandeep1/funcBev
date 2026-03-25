@@ -8,17 +8,17 @@ const LandingAbout = () => {
         {
             text: "Sustainability.",
             color: "text-green-400",
-            image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2000&auto=format&fit=crop" // Nature/Greenery
+            image: "/images/ocean_aboutUs.jpg"
         },
         {
             text: "Health.",
             color: "text-blue-400",
-            image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=2000&auto=format&fit=crop" // Wellness/Active
+            image: "/images/health_about.jpeg" // Wellness/Active
         },
         {
             text: "Community.",
             color: "text-yellow-400",
-            image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2000&auto=format&fit=crop" // People/Together
+            image: "/images/community_abouts.jpeg" // People/Together
         },
     ];
 
@@ -27,30 +27,45 @@ const LandingAbout = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % values.length);
-        }, 3000); // Increased to 3 seconds to give the user time to appreciate the background change
-
+        }, 3000);
         return () => clearInterval(interval);
     }, [values.length]);
     return (
         <div>
             <main
-                // Added transition classes so the background fades nicely when it changes
+
                 className="relative w-full h-[70vh] flex items-center justify-center bg-cover bg-center "
-                style={{ backgroundImage: `url('${values[currentIndex].image}')` }}
+
             >
+                {values.map((val, index) => (
+                    <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100 z-0" : "opacity-0 -z-10"
+                            }`}
+                    >
+                        <Image
+                            src={val.image}
+                            alt={`${val.text} background`}
+                            fill
+                            priority={index === 0}
+                            className="object-cover"
+                            sizes="100vw"
+                        />
+                    </div>
+                ))}
                 {/* Dark Overlay - Keeps white text readable over any image */}
-                <div className="absolute inset-0 bg-black/60 transition-opacity duration-1000"></div>
+                <div className="absolute inset-0 bg-black/30 transition-opacity duration-1000"></div>
 
                 <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center text-center">
 
                     {/* The Flex Container keeping "We Strive for" anchored */}
                     <h1 className="flex flex-col items-center md:justify-center w-full text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight drop-shadow-lg">
 
-                        <span className="whitespace-nowrap text-blue-600 gap-10 md:mr-4">
-                            mizu
-                            <span className="whitespace-nowrap text-blue-600 md:mr-4 text-white">
-                                Strives for
+                        <span className="whitespace-nowrap text-shadow-lg text-blue-600 gap-10 md:mr-4 my-4">
+                            mizu  <span className="whitespace-nowrap text-blue-600 md:mr-4 text-white">
+                                strives for
                             </span>
+
                         </span>
 
 
