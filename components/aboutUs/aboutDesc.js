@@ -4,19 +4,19 @@ import Image from 'next/image';
 export default function AboutDesc() {
     const values = [
         {
-            title: "Sustainability by the glass",
-            description: "When you use our system, you're saving more than a plastic bottle—you're shutting off the oil needed to create it and keeping the air free from emissions that come from shipping it. Our customers have saved nearly 1 billion bottles to-date.",
-            image: "/images/sustainability.jpg" // Replace with your local image paths
+            title: "Sustainability:",
+            description: "Born from a deep respect for the outdoors and driven by the mission to protect where we play.<br /> Mizu actively combats the global crisis of single-use plastics by creating highly durable, premium stainless steel alternatives meant to last a lifetime. Beyond manufacturing reusable bottles",
+            image: "/images/Sustain_aboutUs.jpg" // Replace with your local image paths
         },
         {
-            title: "Health & Wellness First",
+            title: "Health",
             description: "Advanced multi-stage filtration and precision carbonation deliver perfect hydration on-demand. Monitor system health and track your daily water intake in real-time, making healthy choices simple and refreshing.",
-            image: "/images/health.jpg"
+            image: "/images/helth_about.jpeg"
         },
         {
-            title: "Empowering Collective Change",
+            title: "Community",
             description: "Join a growing community of businesses and individuals who have already committed to a greener future. Your team's water break becomes a shared moment of purpose, contributing directly to a cleaner world.",
-            image: "/images/community.jpg"
+            image: "/images/comm_about.jpeg"
         },
     ];
 
@@ -39,12 +39,14 @@ export default function AboutDesc() {
                             {/* Image Container 
                   'rounded-full' on a rectangular container creates the pill shape
               */}
-                            <div className="relative w-full md:w-1/2 h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-sm shrink-0">
+                            <div className="relative w-full md:w-1/2 aspect-[4/3] lg:aspect-[16/11] rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 shrink-0 border border-black/5">
                                 <Image
                                     src={val.image}
                                     alt={val.title}
                                     fill
-                                    className="object-cover"
+                                    // width={100}
+                                    // height={100}
+                                    // className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
