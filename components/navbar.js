@@ -33,7 +33,7 @@ const Navbar = () => {
                 {/* Now passing href directly to NavItem */}
                 <NavItem title="Products" href="/products/" currentPath={pathname} />
                 <NavItem title="About Us" href="/about/" currentPath={pathname} />
-                <NavItem title="Contact" href="/Contact" currentPath={pathname} />
+                <NavItem title="Contact" href="/contact" currentPath={pathname} />
             </nav>
 
             {/* Mobile Hamburger / X Icon */}
@@ -54,7 +54,7 @@ const Navbar = () => {
             `}>
                 <NavItem title="Products" href="/products/" currentPath={pathname} />
                 <NavItem title="About Us" href="/about/" currentPath={pathname} />
-                <NavItem title="Contact" href="/Contact/" currentPath={pathname} />
+                <NavItem title="Contact" href="/contact" currentPath={pathname} />
             </div>
 
         </header >
